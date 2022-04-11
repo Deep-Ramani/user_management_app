@@ -51,7 +51,7 @@ export const HomePage = () => {
         <div className="card">
           <div className="header">
             <div className="avatar">
-              <img src={user.avatar} alt="" />
+              <img src={user.avatar} alt="" className="avatar"/>
             </div>
           </div>
           <div className="card-body">
@@ -77,3 +77,5 @@ export const HomePage = () => {
   return ""
 }
 };
+
+export default HomePage;

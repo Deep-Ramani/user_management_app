@@ -58,11 +58,12 @@ export const SignUpForm = () => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
+        console.log(values.avatar);
         dispatch(UserRegister({
           name :values.name,
           email: values.email,
           phone: values.phone,
-          avatar: values.avatar,
+          avatar: URL.createObjectURL(values.avatar),
           password: values.password
         }
         ))
@@ -177,3 +178,5 @@ export const SignUpForm = () => {
       </div> */
   );
 };
+
+export default SignUpForm;

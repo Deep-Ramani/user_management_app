@@ -1,7 +1,7 @@
 import React from "react";
-import { SignUpForm } from "./SignupForm/SignUpForm";
-import { Image } from "./Image/Image";
-import "../SignupPage/SignupPage.css";
+import SignUpForm from '../Components/SignupPage/SignupForm/SignUpForm'
+import { Image } from "../Components/SignupPage/Image/Image";
+import "../pages/SignupPage.css"
 export const SignupPage = () => {
   return (
     <>
@@ -16,3 +16,4 @@ export const SignupPage = () => {
     </>
   );
 };
+export default SignupPage;
