@@ -6,3 +6,11 @@ input.form-control, input.form-control:focus {
   color: red;
   font-size: 0.7rem;
 }
+.inputGroup{
+  margin-bottom: 10px;
+}.form-control{
+  padding: 0px;
+}
+.form-label{
+  margin-bottom: 0px;
+}

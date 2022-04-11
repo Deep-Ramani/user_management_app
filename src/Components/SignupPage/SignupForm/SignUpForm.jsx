@@ -1,29 +1,38 @@
 import React, { useState, useRef } from "react";
 import { InputGroup } from "./InputGroup/InputGroup";
 import "./SignUpForm.css";
-import { Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-
+import DefaultAvatar from "../../../assets/images/avatar2.png";
+import "yup-phone";
+// import { formik } from "formik";
 export const SignUpForm = () => {
   const profileRef = useRef(null);
+  // const phoneRegExp = /^(\+91)?(-)?\s*?(91)?\s*?(\d{3})-?\s*?(\d{3})-?\s*?(\d{4})$/
+  const [image, setImage] = useState(DefaultAvatar);
 
-  const [image, setImage] = useState(null);
+  // const onProfileChangeHandler = (event,setFieldValue) => {
+  //   console.log("HI");
 
-  const onProfileChangeHandler = (event, setFieldValue) => {
-    console.log("HI");
+  //   const profileURL = URL.createObjectURL(event.currentTarget.files[0]);
 
-    const profileURL = URL.createObjectURL(event.currentTarget.files[0]);
+  //   setFieldValue("profile", event.currentTarget.files[0]);
 
-    // .setFieldValue("profile", event.currentTarget.files[0]);
-
-    setImage(profileURL);
-  };
+  //   setImage(profileURL);
+  // };
   const validate = Yup.object({
     name: Yup.string()
       .max(15, "Must be 15 characters or less")
-      .required("Required"),
+      .required("Name is Required"),
 
+    avatar: Yup.mixed().required("Image must be selected")
+    .test("fileSize", "File must be less than 2MB", (value) => {
+      console.log(value);
+
+      return value !== undefined && value && value.size < 2000000;
+    }),
     email: Yup.string().email("Email is invalid").required("Email is required"),
+    phone: Yup.string().required("Phone No is required").phone("IN", true),
     password: Yup.string()
       .min(6, "Password must be at least 6 charaters")
       .required("Password is required"),
@@ -34,9 +43,11 @@ export const SignUpForm = () => {
   return (
     <Formik
       initialValues={{
+        avatar: "",
         name: "",
         email: "",
         password: "",
+        phone: "",
         confirmPassword: "",
       }}
       validationSchema={validate}
@@ -45,7 +56,7 @@ export const SignUpForm = () => {
       }}
     >
       {(formik) => (
-        <div className="h-25">
+        <div className="">
           <h1 className="font-weight-bold .display-4 signup">SignUp</h1>
 
           <div className="selectImage d-none">
@@ -59,26 +70,53 @@ export const SignUpForm = () => {
           </div>
 
           <Form>
+
+
             <div className="preview">
-            <div className="profile-picture">
-              <img src={image} alt="" />
+              <div className="profile-picture" name="avatar">
+                <img src={image} alt="" />
+              </div>
+              <button
+                type="button"
+                name="avatar"
+                className="btn btn-primary profileButton"
+                onClick={() => profileRef.current.click()}
+              >
+                Select Image
+              </button>
+              <Field
+                value={undefined}
+                type="file"
+                name="avatar"
+                innerRef={profileRef}
+                className="d-none"
+                onChange={(event) => {
+
+                  console.log(event);
+                  
+                  if (event.currentTarget.files) {
+                  
+                  const file = event.currentTarget.files[0];
+                  
+                  formik.setFieldValue("avatar", file);
+                  
+                  console.log(event.currentTarget.files[0]);
+                  
+                  setImage(
+                  
+                  URL.createObjectURL(event.currentTarget.files[0])
+                  
+                  );
+                  
+                  }}}
+              />
+               <ErrorMessage component="div" name="avatar" className="ImageError" />
+
             </div>
-            <button
-              type="button"
-              className="add-photo"
-              onClick={() => profileRef.current.click()}
-            >
-              Photo +
-            </button>
-            <input
-              value={undefined}
-              type="file"
-              ref={profileRef}
-              className="d-none"
-              onChange={onProfileChangeHandler}
-            />
-            </div>
-            <InputGroup label="Name" name="name" type="text" />
+
+              <div className="allinputGroup">    
+            <InputGroup label="Name" name="name" type="text"  />
+            <InputGroup label="Phone No" name="phone" type="tel" />
             <InputGroup label="Email" name="email" type="email" />
             <InputGroup label="password" name="password" type="password" />
             <InputGroup
@@ -92,6 +130,7 @@ export const SignUpForm = () => {
             <button className="btn btn-danger mt-3" type="reset">
               Reset
             </button>
+            </div>
           </Form>
         </div>
       )}
