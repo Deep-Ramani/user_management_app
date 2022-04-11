@@ -23,6 +23,7 @@ export const SignUpForm = () => {
 
   //   setImage(profileURL);
   // };
+  
   const validate = Yup.object({
     name: Yup.string()
       .max(15, "Must be 15 characters or less")
