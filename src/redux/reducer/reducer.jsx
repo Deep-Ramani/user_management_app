@@ -1,10 +1,14 @@
-import React from "react";
+const intialState = {
+  user: null,
+};
+const reducer = (state = intialState, action) => {
+  switch (action.type) {
+    case "UserRegistration":
+      return { ...state, user: action.payload };
 
-const reducer = () =>{
-  return(
-    <>
-    </>
-  )
-}
+    default:
+      return state;
+  }
+};
 
 export default reducer;

@@ -10,6 +10,7 @@ input.form-control, input.form-control:focus {
   margin-bottom: 10px;
 }.form-control{
   padding: 0px;
+  padding-left: 10px;
 }
 .form-label{
   margin-bottom: 0px;
