@@ -4,6 +4,16 @@ body {
   height: 100%;
   width: 100%;
 }
+.section
+{
+  position: relative;
+}
+
+
+.card-body {
+  margin: 0 auto;
+}
+
 
 .columns {
   margin-top: 0;
@@ -18,8 +28,9 @@ body {
   .card {
     border-radius: 6px;
     overflow:hidden;
-    max-width: 300px;
-    max-height: 380px;
+    height: 500px;
+    max-width: 400px;
+    max-height: 500px;
     margin: 0 auto;
   }
 
@@ -29,8 +40,8 @@ body {
     }
 
       .avatar {
-        width: 80px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         position: relative;
         margin: 0 auto;
       }
@@ -40,15 +51,21 @@ body {
           position: absolute;
           bottom: -42px;
           border: 4px solid white;
+          width: 150px;
+          height: 150px;
         }
       
     
     .card-body {
-      padding: 30px;}
+      padding: 30px;
+      margin: 0 auto;
+      margin-top: 40px;
+      font-size:25px;
+    }
       .user-meta {
         padding-top: 20px;}
         .username {
-          font-size: 18px;
+          font-size: 25px;
           font-weight: 600;
         }
         .position {
