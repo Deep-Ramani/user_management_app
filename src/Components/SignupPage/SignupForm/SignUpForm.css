@@ -1,7 +1,7 @@
 .signup {
   font-weight: bold;
-  margin-left: 25px;
-  font-size: 50px;
+  /* margin-left: 25px; */
+  font-size: 40px;
 }
 .selectImage {
   
@@ -12,4 +12,39 @@
 .inputgroup{
   width: 400px;
   
+}
+.btn-danger{
+  margin-left: 20px;
+}
+
+.profile-picture img{
+  width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 50%;
+  text-decoration: none;
+  padding: 10px;
+  padding-top: 0px !important;
+  /* background-color: aqua; */
+}
+.preview{
+  text-align: center;
+}
+
+
+/* Button */
+.profileButton{
+  background-color: #668EA2;
+  border-color: #668EA2;
+}
+.ImageError{
+  position: absolute;
+  color: red;
+  font-size: 0.7rem;
+  margin-left: 138px;
+  margin-top: 3px;
+  
+}
+.allinputGroup{
+  margin-top:10px;
 }
