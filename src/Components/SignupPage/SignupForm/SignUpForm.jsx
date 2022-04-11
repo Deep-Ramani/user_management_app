@@ -5,8 +5,11 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import DefaultAvatar from "../../../assets/images/avatar2.png";
 import "yup-phone";
+import { useDispatch } from "react-redux";
+import { UserRegister } from "../../../redux/action/action";
 // import { formik } from "formik";
 export const SignUpForm = () => {
+  const dispatch = useDispatch();
   const profileRef = useRef(null);
   // const phoneRegExp = /^(\+91)?(-)?\s*?(91)?\s*?(\d{3})-?\s*?(\d{3})-?\s*?(\d{4})$/
   const [image, setImage] = useState(DefaultAvatar);
@@ -40,6 +43,8 @@ export const SignUpForm = () => {
       .oneOf([Yup.ref("password"), null], "Password must match")
       .required("Confirm password is required"),
   });
+
+
   return (
     <Formik
       initialValues={{
@@ -52,6 +57,14 @@ export const SignUpForm = () => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
+        dispatch(UserRegister({
+          name :values.name,
+          email: values.email,
+          phone: values.phone,
+          avatar: values.avatar,
+          password: values.password
+        }
+        ))
         console.log(values);
       }}
     >
@@ -88,6 +101,7 @@ export const SignUpForm = () => {
                 value={undefined}
                 type="file"
                 name="avatar"
+                accept='.jpg, .png'
                 innerRef={profileRef}
                 className="d-none"
                 onChange={(event) => {
