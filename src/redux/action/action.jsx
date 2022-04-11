@@ -5,3 +5,10 @@ export const UserRegister = (user) =>{
     payload : user,
   }
 }
+
+export const logOut = () =>{
+  localStorage.removeItem("userData");
+  return {
+    type: 'LOGOUT'
+}
+}

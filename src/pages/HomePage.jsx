@@ -1,11 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import './HomePage.css'
-
+import { logOut } from "../redux/action/action";
 export const HomePage = () => {
 
   const { user } = useSelector(state => state);
-
+  const dispatch = useDispatch();
   if (user) {
     return (
 
@@ -35,7 +35,7 @@ export const HomePage = () => {
                 </li>
               </ul>
               <form className="d-flex">
-                <button className="btn btn-outline-danger" type="submit">
+                <button className="btn btn-outline-danger" type="submit" onClick={() => dispatch(logOut())}>
                   Logout
                 </button>
               </form>
