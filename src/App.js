@@ -28,15 +28,15 @@ function App() {
       {
         Object.keys(routes).map(key=>{
           const value = routes[key];
-          const {id, name, description, path, isPrivate, element} = value;
+          const {id, name,  path, isPrivate, element} = value;
 
           return(
             isPrivate ?
             (
-              <Route id={id} name={name} description={description} path={path} element={PrivateRoutes(element)} key={key} />
+              <Route id={id} name={name}  path={path} element={PrivateRoutes(element)} key={key} />
             )
             : (
-              <Route id={id} name={name} description={description} path={path} element={PublicRoutes(element)} key={key} />
+              <Route id={id} name={name}  path={path} element={PublicRoutes(element)} key={key} />
             )
           )
         })
