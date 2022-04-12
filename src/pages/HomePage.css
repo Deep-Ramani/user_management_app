@@ -1,19 +1,15 @@
-
 body {
   position: relative;
   height: 100%;
   width: 100%;
 }
-.section
-{
+.section {
   position: relative;
 }
-
 
 .card-body {
   margin: 0 auto;
 }
-
 
 .columns {
   margin-top: 0;
@@ -25,74 +21,76 @@ body {
   position: relative;
 }
 
-  .card {
-    border-radius: 6px;
-    overflow:hidden;
-    height: 500px;
-    max-width: 400px;
-    max-height: 500px;
-    margin: 0 auto;
-  }
+.card {
+  border-radius: 6px;
+  overflow: hidden;
+  height: 500px;
+  max-width: 400px;
+  max-height: 500px;
+  margin: 0 auto;
+}
 
-    .header {
-      height: 120px;
-      background: #7F00FF;
-    }
+.header {
+  height: 120px;
+  background: #7f00ff;
+}
 
-      .avatar {
-        width: 150px;
-        height: 150px;
-        position: relative;
-        margin: 0 auto;
-      }
-        .avatar img {
-          display: block;
-          border-radius: 50%;
-          position: absolute;
-          bottom: -42px;
-          border: 4px solid white;
-          width: 150px;
-          height: 150px;
-        }
-      
-    
-    .card-body {
-      padding: 30px;
-      margin: 0 auto;
-      margin-top: 40px;
-      font-size:25px;
-    }
-      .user-meta {
-        padding-top: 20px;}
-        .username {
-          font-size: 25px;
-          font-weight: 600;
-        }
-        .position {
-          font-size: 90%;
-          color: #7F00FF;
-        }
-      
-    
-    .user-bio {
-      padding-top: 8px;
-      font-size: 92%;
-      color: #999;
-    }
-    .action {
-      padding-top: 20px;}
-      .button {
-        padding: 16px 20px 16px 20px;
-        background: #7F00FF;
-        border-color: #7F00FF;
-        color: white;
-        border-radius: 100px;
-        transition: opacity .3s;}
+.avatar {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 0 auto;
+}
+.avatar img {
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -42px;
+  border: 4px solid white;
+  width: 150px;
+  height: 150px;
+}
 
-        .button:hover {
-          opacity: 0.7;
-        }
-      
-    
-  
+.card-body {
+  padding: 30px;
+  margin: 0 auto;
+  margin-top: 40px;
+  font-size: 25px;
+}
+.user-meta {
+  padding-top: 20px;
+}
+.username {
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+.navbarcontainer{
+  margin-top: 0px !important;
+}
+.position {
+  font-size: 90%;
+  color: #7f00ff;
+}
 
+.user-bio {
+  padding-top: 8px;
+  font-size: 92%;
+  text-align: center;
+  color: #999;
+}
+.action {
+  padding-top: 20px;
+}
+.button {
+  padding: 16px 20px 16px 20px;
+  background: #7f00ff;
+  border-color: #7f00ff;
+  color: white;
+  border-radius: 100px;
+  transition: opacity 0.3s;
+}
+
+.button:hover {
+  opacity: 0.7;
+}
