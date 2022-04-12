@@ -1,14 +1,13 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import React from "react";
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 function PrivateRoute(Component) {
-    const { user } = useSelector(state => state);
-    if (user) {
-        return Component
-    }
-    return <Navigate to='/signupPage' />
+  const { user } = useSelector((state) => state);
+  if (user) {
+    return Component;
+  }
+  return <Navigate to="/signupPage" />;
 }
 
-
-export default PrivateRoute
+export default PrivateRoute;

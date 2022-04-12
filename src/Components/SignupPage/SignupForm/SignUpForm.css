@@ -1,50 +1,44 @@
 .signup {
   font-weight: bold;
-  /* margin-left: 25px; */
   font-size: 40px;
 }
 .selectImage {
-  
   margin: auto;
   width: 50%;
   padding: 10px;
 }
-.inputgroup{
+.inputgroup {
   width: 400px;
-  
 }
-.btn-danger{
+.btn-danger {
   margin-left: 20px;
 }
 
-.profile-picture img{
+.profile-picture img {
   width: 120px;
   height: 120px;
   border: none;
   border-radius: 50%;
   text-decoration: none;
   padding: 10px;
-  padding-top: 0px !important;
-  /* background-color: aqua; */
+  padding-top: 0px !important; 
 }
-.preview{
+.preview {
   text-align: center;
 }
 
-
 /* Button */
-.profileButton{
-  background-color: #668EA2;
-  border-color: #668EA2;
+.profileButton {
+  background-color: #668ea2;
+  border-color: #668ea2;
 }
-.ImageError{
+.ImageError {
   position: absolute;
   color: red;
   font-size: 0.7rem;
   margin-left: 138px;
   margin-top: 3px;
-  
 }
-.allinputGroup{
-  margin-top:10px;
+.allinputGroup {
+  margin-top: 10px;
 }
