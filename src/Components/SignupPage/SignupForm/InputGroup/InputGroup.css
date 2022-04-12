@@ -1,4 +1,4 @@
-input.form-control{
+input.form-control {
   background-color: antiquewhite;
 }
 .input.form-control:focus {
@@ -9,13 +9,14 @@ input.form-control{
   color: red;
   font-size: 0.7rem;
 }
-.inputGroup{
+.inputGroup {
   margin-bottom: 10px;
-}.form-control{
+}
+.form-control {
   padding: 0px;
   padding-left: 10px;
   font-size: 15px;
 }
-.form-label{
+.form-label {
   margin-bottom: 0px;
 }

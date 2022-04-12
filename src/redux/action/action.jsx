@@ -1,15 +1,13 @@
-export const UserRegister = (user) =>{
-  
-  // localStorage.setItem("userData", JSON.stringify(user));
+export const UserRegister = (user) => {
   return {
-    type : "UserRegistration",
-    payload : user,
-  }
-}
+    type: "UserRegistration",
+    payload: user,
+  };
+};
 
-export const logOut = () =>{
+export const logOut = () => {
   localStorage.removeItem("userData");
   return {
-    type: 'LOGOUT'
-}
-}
+    type: "LOGOUT",
+  };
+};
