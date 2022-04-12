@@ -1,5 +1,8 @@
-input.form-control, input.form-control:focus {
+input.form-control{
   background-color: antiquewhite;
+}
+.input.form-control:focus {
+  background-color: aliceblue;
 }
 .error {
   position: absolute;
@@ -11,6 +14,7 @@ input.form-control, input.form-control:focus {
 }.form-control{
   padding: 0px;
   padding-left: 10px;
+  font-size: 15px;
 }
 .form-label{
   margin-bottom: 0px;

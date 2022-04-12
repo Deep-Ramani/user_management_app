@@ -9,7 +9,7 @@ export const InputGroup = ({label, ...props}) => {
     <div className="inputGroup">
       <label htmlFor={field.name} className="form-label">{label}</label>
       <input
-        className={`form-control shadow-none ${meta.touched && meta.error && 'is-invalid'}`}
+           className={`form-control  ${meta.touched && meta.error && 'is-invalid'}`}
         {...field} {...props}
         autoComplete="off"
       />
